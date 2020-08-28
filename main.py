@@ -1,3 +1,7 @@
+## Main script for messenger_insights
+# Author: Brandon Guo
+# Last updated: 8/28/20
+
 import json
 import pandas as pd
 import os
