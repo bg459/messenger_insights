@@ -117,6 +117,8 @@ def compute_time_between(df):
                                 if next_one != current:
                                         # Compute response time
                                         diff = df.iloc[i, :]['timestamp_ms'] - df.iloc[i+1,:]['timestamp_ms']
+                                        # This is to remove outliers from "long breaks".
+                                        # Any "response" that is more than a day delayed is ignored.
                                         if diff < 86400000:
                                                 times_dict[current] += diff
                                                 count_dict[current] += 1
